@@ -1,0 +1,63 @@
+<!doctype html>
+  <head>
+    <style>
+      body{
+        font-family: Arial;
+        font-size: 20px;
+        margin: 0;
+        background:  #6a748f;
+        display: flex;
+        justify-content: center;
+        min-height: #000;
+        color: #ffffff;
+    }
+    .voice_to_text{
+        width: 600px;
+        text-align: center;
+    }
+    button
+          {
+           padding: 12px 50px;
+           background: 0ea4da;
+           border: 50px 20px;
+           border-radius: 100px;
+           cursor: pointer;
+           color: rgb(153, 100, 100);
+          }
+    </style>
+         <title>speech to text</title>
+  </head>
+  <div class="voice_to_text">
+    <h1>convert speech to text</h1>
+     <textarea id="convert_text" rows="6" cols="50"></textarea>
+  </br>
+    <button id="click_to_convert" >start</button>
+</br>
+</br>
+     press the start button to start
+    </div>
+    <script>
+        
+      click_to_convert.addEventListener('click', function(){
+    var speech = true;
+    window.SpeechRecognition = window.webkitSpeechRecognition;
+   const recognition =new SpeechRecognition();
+   recognition.interimResults = true;
+   
+   recognition.addEventListener('result', e=>{
+   const transcript = Array.from(e.results)
+   .map(result => result[0])
+   .map(result => result.transcript)
+   
+   convert_text.innerHTML = transcript;
+   })
+   recognition.lang="ar";
+   if(speech == true){
+   recognition.start();
+   }
+  
+})
+
+    </script>
+  </body>
+</html>
