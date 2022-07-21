@@ -1,1 +1,19 @@
-# iot-Task
+# Task1 (IOT)
+
+
+**HTML**
+use base definition in HTML for declration
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+</head>
+
+<body>
+The content of the document......
+</body>
+
+</html>
+
+
